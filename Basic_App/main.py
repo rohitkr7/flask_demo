@@ -13,16 +13,9 @@ def tuna():
     return "<h2>Tuna is good!</h2>"
 
 
-'''
 @app.route('/profile/<username>')
 def profile(username):
     return "<h2>Hey There! " + username + "</h2>"
-'''
-
-
-@app.route('/profile/<username>')
-def profile(username):
-    return render_template("../profile.html", name=username)
 
 
 @app.route('/post/<int:post_id>')

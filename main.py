@@ -4,8 +4,15 @@ app = Flask(__name__)
 
 
 @app.route('/')
-def index():
-    return "This is a demo flask homepage"
+@app.route('/<user>')  # for logged in user
+def index(user=None):
+    return render_template("user.html", user=user)
+
+
+@app.route('/shopping')
+def shopping():
+    food = ["cheese", "Tuna", "Beef", "toothpaste"]
+    return render_template("shopping.html", food=food)
 
 
 @app.route('/profile/<username>')
